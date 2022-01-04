@@ -26,7 +26,15 @@ var cli = meow({
 var verificationFailed;
 
 function format(value, compare) {
+
   if(!_.isPlainObject(value)) {
+    if(typeof value === 'object'){
+      if(value instanceof Date){
+        return value.toLocaleDateString();
+      }else{
+        return JSON.stringify(value);
+      }
+    }
     return value;
   }
 
@@ -94,8 +102,8 @@ ipaMetadata(cli.input[0], function(error, data){
   }
 
   var types = {
-    metadata: ['CFBundleDisplayName', 'CFBundleIdentifier', 'CFBundleShortVersionString', 'CFBundleVersion'],
-    provisioning: ['Name', 'TeamIdentifier', 'TeamName', 'Entitlements']
+    metadata: ['CFBundleDisplayName', 'CFBundleIdentifier', 'CFBundleShortVersionString', 'CFBundleVersion', 'CFBundleURLTypes'],
+    provisioning: ['Name', 'TeamIdentifier', 'TeamName', 'ExpirationDate', 'Entitlements']
   };
 
   var table = new Table();
