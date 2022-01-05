@@ -1,6 +1,6 @@
 {
   "name": "ipa-metadata",
-  "version": "1.4.0",
+  "version": "1.0.0",
   "description": "extract metadata and provisioning information about an .ipa file",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/matiassingers/ipa-metadata"
+    "url": "https://github.com/wirapongc/ipa-metadata"
   },
   "author": "Matias Singers <mail@matiassingers.com> (http://mts.io)",
   "keywords": [
